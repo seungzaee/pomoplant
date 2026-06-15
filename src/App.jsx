@@ -1,17 +1,23 @@
+import { useState } from "react";
 import "./App.css";
-import Plant from "./components/Plant";
-import Timer from "./components/Timer";
-import StatusPanel from "./components/StatusPanel";
+import StartScreen from "./components/StartScreen";
+import StudyScreen from "./components/StudyScreen";
 
 function App() {
-  return (
-    <div className="app">
-      <h1>POMOPLANT 🌱</h1>
+  const [screen, setScreen] = useState("start");
 
-      <Plant />
-      <Timer />
-      <StatusPanel />
-    </div>
+  const handleStart = () => {
+    setScreen("study");
+  };
+
+  return (
+    <>
+      {screen === "start" ? (
+        <StartScreen onStart={handleStart} />
+      ) : (
+        <StudyScreen />
+      )}
+    </>
   );
 }
 

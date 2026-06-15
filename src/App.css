@@ -1,64 +1,359 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f5efd9;
+}
+
 .app {
   min-height: 100vh;
   padding: 40px 20px;
   text-align: center;
-  background: #f3f7ed;
-  color: #2f3e2f;
-  font-family: Arial, sans-serif;
+  color: #3f4f32;
+  font-family: "VT323", monospace;
+  background:
+    linear-gradient(90deg, rgba(139, 111, 71, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(139, 111, 71, 0.08) 1px, transparent 1px), #f5efd9;
+  background-size: 24px 24px;
 }
 
 h1 {
-  margin-bottom: 32px;
-  font-size: 40px;
+  margin: 0 0 12px;
+  font-family: "Press Start 2P", monospace;
+  font-size: 28px;
+  line-height: 1.5;
+  color: #4f6f52;
+  text-shadow: 3px 3px 0 #e7c66b;
+}
+
+.app::before {
+  content: "STUDY MODE : READY";
+  display: block;
+  width: fit-content;
+  margin: 0 auto 28px;
+  padding: 8px 14px;
+  border: 3px solid #4f6f52;
+  background: #fff9e8;
+  color: #8b6f47;
+  font-family: "Press Start 2P", monospace;
+  font-size: 10px;
+  box-shadow: 4px 4px 0 #8b6f47;
 }
 
 .plant-card,
 .timer-card,
 .status-card {
   width: 100%;
-  max-width: 420px;
-  margin: 0 auto 20px;
+  max-width: 460px;
+  margin: 0 auto 24px;
   padding: 24px;
-  border-radius: 24px;
-  background: white;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  border: 4px solid #4f6f52;
+  background: #fff9e8;
+  box-shadow: 8px 8px 0 #8b6f47;
+}
+
+.plant-card {
+  position: relative;
+  padding-top: 36px;
+}
+
+.plant-card::before {
+  content: "POMO PLANT";
+  position: absolute;
+  top: -15px;
+  left: 18px;
+  padding: 4px 10px;
+  border: 3px solid #4f6f52;
+  background: #e7c66b;
+  color: #3f4f32;
+  font-family: "Press Start 2P", monospace;
+  font-size: 9px;
 }
 
 .plant {
-  font-size: 96px;
-  margin-bottom: 12px;
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid #4f6f52;
+  background: #dce8c8;
+  font-size: 88px;
+  image-rendering: pixelated;
+  box-shadow:
+    inset 4px 4px 0 rgba(255, 255, 255, 0.5),
+    inset -4px -4px 0 rgba(79, 111, 82, 0.25);
 }
 
 .plant-message {
-  font-size: 18px;
-  font-weight: 600;
+  margin: 0;
+  padding: 12px 16px;
+  border: 3px solid #8b6f47;
+  background: #f5efd9;
+  color: #3f4f32;
+  font-size: 26px;
+  line-height: 1.2;
 }
 
 .timer-card h2 {
-  margin: 0 0 20px;
-  font-size: 48px;
+  margin: 0 0 24px;
+  padding: 18px;
+  border: 4px solid #3f4f32;
+  background: #4f6f52;
+  color: #fff9e8;
+  font-family: "Press Start 2P", monospace;
+  font-size: 36px;
+  line-height: 1.4;
+  text-shadow: 3px 3px 0 #263820;
 }
 
 .button-group {
   display: flex;
   justify-content: center;
   gap: 12px;
+  flex-wrap: wrap;
 }
 
 button {
-  padding: 10px 18px;
-  border: none;
-  border-radius: 999px;
-  background: #98b582;
-  color: white;
-  font-size: 16px;
+  padding: 14px 18px;
+  border: 4px solid #3f4f32;
+  background: #e7c66b;
+  color: #3f4f32;
+  font-family: "Press Start 2P", monospace;
+  font-size: 10px;
   cursor: pointer;
+  box-shadow: 4px 4px 0 #8b6f47;
 }
 
 button:hover {
-  background: #7fa06a;
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #8b6f47;
+}
+
+button:active {
+  transform: translate(4px, 4px);
+  box-shadow: none;
 }
 
 .status-card {
-  font-size: 16px;
+  text-align: left;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.status-card p {
+  margin: 8px 0;
+  padding-left: 12px;
+  border-left: 6px solid #e7c66b;
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  .timer-card h2 {
+    font-size: 28px;
+  }
+
+  .plant {
+    width: 130px;
+    height: 130px;
+    font-size: 72px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+.start-screen,
+.study-screen {
+  min-height: 100vh;
+  padding: 40px 20px;
+  background:
+    linear-gradient(90deg, rgba(139, 111, 71, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(139, 111, 71, 0.08) 1px, transparent 1px), #f5efd9;
+  background-size: 24px 24px;
+  color: #3f4f32;
+  font-family: "VT323", monospace;
+}
+
+.start-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.start-panel,
+.study-panel {
+  width: 100%;
+  max-width: 560px;
+  padding: 32px;
+  border: 4px solid #4f6f52;
+  background: #fff9e8;
+  box-shadow: 8px 8px 0 #8b6f47;
+  text-align: center;
+}
+
+.game-label {
+  width: fit-content;
+  margin: 0 auto 20px;
+  padding: 8px 12px;
+  border: 3px solid #4f6f52;
+  background: #e7c66b;
+  color: #3f4f32;
+  font-family: "Press Start 2P", monospace;
+  font-size: 10px;
+}
+
+.start-panel h1,
+.study-panel h1 {
+  margin: 0 0 20px;
+  font-family: "Press Start 2P", monospace;
+  font-size: 32px;
+  line-height: 1.4;
+  color: #4f6f52;
+  text-shadow: 3px 3px 0 #e7c66b;
+}
+
+.start-subtitle,
+.study-message {
+  margin: 0 0 28px;
+  font-size: 28px;
+}
+
+.setting-box {
+  margin-bottom: 28px;
+  padding: 20px;
+  border: 3px solid #8b6f47;
+  background: #f5efd9;
+}
+
+.setting-box label {
+  display: block;
+  margin-bottom: 12px;
+  font-family: "Press Start 2P", monospace;
+  font-size: 10px;
+}
+
+.setting-box select {
+  width: 180px;
+  padding: 10px;
+  border: 3px solid #3f4f32;
+  background: #fff9e8;
+  color: #3f4f32;
+  font-family: "Press Start 2P", monospace;
+  font-size: 10px;
+}
+
+.plant-select-box {
+  margin-bottom: 32px;
+  padding: 20px;
+  border: 3px solid #8b6f47;
+  background: #f5efd9;
+}
+
+.plant-select-box p {
+  margin: 0 0 16px;
+  font-family: "Press Start 2P", monospace;
+  font-size: 10px;
+}
+
+.plant-options {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.plant-option {
+  width: 72px;
+  height: 72px;
+  padding: 0;
+  font-size: 36px;
+}
+
+.plant-option.selected {
+  background: #dce8c8;
+}
+
+.start-button {
+  min-width: 180px;
+}
+
+.study-screen {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vine-area {
+  position: fixed;
+  left: 24px;
+  bottom: 24px;
+  width: 72px;
+  min-height: 300px;
+  padding: 12px;
+  border: 4px solid #4f6f52;
+  background: #fff9e8;
+  box-shadow: 6px 6px 0 #8b6f47;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 8px;
+}
+
+.vine-piece {
+  font-size: 36px;
+}
+
+.camera-preview {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 220px;
+  padding: 14px;
+  border: 4px solid #4f6f52;
+  background: #fff9e8;
+  box-shadow: 6px 6px 0 #8b6f47;
+  text-align: center;
+  font-family: "Press Start 2P", monospace;
+  font-size: 10px;
+}
+
+.camera-preview p {
+  margin: 0 0 10px;
+}
+
+.camera-placeholder {
+  height: 130px;
+  border: 3px solid #3f4f32;
+  background: #dce8c8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4f6f52;
+}
+
+@media (max-width: 900px) {
+  .study-screen {
+    padding-bottom: 260px;
+  }
+
+  .vine-area {
+    left: 16px;
+    width: 60px;
+  }
+
+  .camera-preview {
+    right: 16px;
+    left: 96px;
+    width: auto;
+  }
 }
