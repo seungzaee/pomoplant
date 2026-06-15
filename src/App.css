@@ -357,3 +357,27 @@ button:active {
     width: auto;
   }
 }
+
+.plant-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.plant-option-emoji {
+  font-size: 30px;
+  line-height: 1;
+}
+
+.plant-option-name {
+  font-size: 8px;
+  line-height: 1;
+}
+
+.plant-option.selected {
+  background: #dce8c8;
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 #8b6f47;
+}

@@ -5,8 +5,17 @@ import StudyScreen from "./components/StudyScreen";
 
 function App() {
   const [screen, setScreen] = useState("start");
+  const [studyConfig, setStudyConfig] = useState({
+    studyMinutes: 25,
+    selectedPlant: {
+      id: "sprout",
+      emoji: "🌱",
+      name: "SPROUT",
+    },
+  });
 
-  const handleStart = () => {
+  const handleStart = (config) => {
+    setStudyConfig(config);
     setScreen("study");
   };
 
@@ -15,7 +24,10 @@ function App() {
       {screen === "start" ? (
         <StartScreen onStart={handleStart} />
       ) : (
-        <StudyScreen />
+        <StudyScreen
+          studyMinutes={studyConfig.studyMinutes}
+          selectedPlant={studyConfig.selectedPlant}
+        />
       )}
     </>
   );

@@ -1,13 +1,13 @@
 import Timer from "./Timer";
 import StatusPanel from "./StatusPanel";
 
-function StudyScreen() {
+function StudyScreen({ studyMinutes, selectedPlant }) {
   return (
     <main className="study-screen">
       <aside className="vine-area">
-        <div className="vine-piece">🌱</div>
-        <div className="vine-piece">🌿</div>
-        <div className="vine-piece">🌿</div>
+        <div className="vine-piece">{selectedPlant.emoji}</div>
+        <div className="vine-piece">{selectedPlant.emoji}</div>
+        <div className="vine-piece">{selectedPlant.emoji}</div>
       </aside>
 
       <section className="study-panel">
@@ -15,9 +15,9 @@ function StudyScreen() {
 
         <h1>POMOPLANT</h1>
 
-        <p className="study-message">집중할수록 왼쪽의 식물이 자라나요.</p>
+        <p className="study-message">선택한 식물: {selectedPlant.name}</p>
 
-        <Timer />
+        <Timer studyMinutes={studyMinutes} />
 
         <StatusPanel />
       </section>

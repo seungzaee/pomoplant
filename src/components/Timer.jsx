@@ -1,16 +1,19 @@
 import useTimer from "../hooks/useTimer";
 
-function Timer() {
-  const { formattedTime, startTimer, pauseTimer, resetTimer } = useTimer();
+function Timer({ studyMinutes }) {
+  const initialTime = studyMinutes * 60;
+
+  const { formattedTime, startTimer, pauseTimer, resetTimer } =
+    useTimer(initialTime);
 
   return (
     <section className="timer-card">
       <h2>{formattedTime}</h2>
 
       <div className="button-group">
-        <button onClick={startTimer}>시작</button>
-        <button onClick={pauseTimer}>일시정지</button>
-        <button onClick={resetTimer}>리셋</button>
+        <button onClick={startTimer}>START</button>
+        <button onClick={pauseTimer}>PAUSE</button>
+        <button onClick={resetTimer}>RESET</button>
       </div>
     </section>
   );
