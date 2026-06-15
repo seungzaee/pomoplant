@@ -1,4 +1,5 @@
 import "./App.css";
+import Timer from "./components/Timer";
 
 function App() {
   return (
@@ -10,15 +11,7 @@ function App() {
         <p className="plant-message">오늘도 같이 공부하자!</p>
       </section>
 
-      <section className="timer-card">
-        <h2>25:00</h2>
-
-        <div className="button-group">
-          <button>시작</button>
-          <button>일시정지</button>
-          <button>리셋</button>
-        </div>
-      </section>
+      <Timer />
 
       <section className="status-card">
         <p>현재 상태: 대기 중</p>
