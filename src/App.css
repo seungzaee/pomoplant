@@ -381,3 +381,12 @@ button:active {
   transform: translate(3px, 3px);
   box-shadow: 1px 1px 0 #8b6f47;
 }
+
+.end-button {
+  margin: 16px 0 20px;
+  background: #d98c5f;
+}
+
+.end-button:hover {
+  background: #c8784e;
+}
