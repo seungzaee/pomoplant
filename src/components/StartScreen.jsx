@@ -45,6 +45,7 @@ function StartScreen({ onStart }) {
             value={studyMinutes}
             onChange={(event) => setStudyMinutes(Number(event.target.value))}
           >
+            <option value="1">1 MIN</option>
             <option value="15">15 MIN</option>
             <option value="25">25 MIN</option>
             <option value="30">30 MIN</option>

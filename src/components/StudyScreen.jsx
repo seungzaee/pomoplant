@@ -1,25 +1,43 @@
+import useTimer from "../hooks/useTimer";
+import PlantVine from "./PlantVine";
 import Timer from "./Timer";
 import StatusPanel from "./StatusPanel";
 
 function StudyScreen({ studyMinutes, selectedPlant }) {
+  const initialTime = studyMinutes * 60;
+
+  const {
+    timeLeft,
+    isRunning,
+    formattedTime,
+    startTimer,
+    pauseTimer,
+    resetTimer,
+  } = useTimer(initialTime);
+
+  const progress = Math.floor(((initialTime - timeLeft) / initialTime) * 100);
+
   return (
     <main className="study-screen">
-      <aside className="vine-area">
-        <div className="vine-piece">{selectedPlant.emoji}</div>
-        <div className="vine-piece">{selectedPlant.emoji}</div>
-        <div className="vine-piece">{selectedPlant.emoji}</div>
-      </aside>
+      <PlantVine selectedPlant={selectedPlant} progress={progress} />
 
       <section className="study-panel">
         <p className="game-label">STUDY MODE</p>
 
         <h1>POMOPLANT</h1>
 
-        <p className="study-message">선택한 식물: {selectedPlant.name}</p>
+        <p className="study-message">
+          선택한 식물: {selectedPlant.name} / 성장률: {progress}%
+        </p>
 
-        <Timer studyMinutes={studyMinutes} />
+        <Timer
+          formattedTime={formattedTime}
+          startTimer={startTimer}
+          pauseTimer={pauseTimer}
+          resetTimer={resetTimer}
+        />
 
-        <StatusPanel />
+        <StatusPanel isRunning={isRunning} progress={progress} />
       </section>
 
       <section className="camera-preview">
