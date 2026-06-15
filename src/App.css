@@ -1,0 +1,64 @@
+.app {
+  min-height: 100vh;
+  padding: 40px 20px;
+  text-align: center;
+  background: #f3f7ed;
+  color: #2f3e2f;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  margin-bottom: 32px;
+  font-size: 40px;
+}
+
+.plant-card,
+.timer-card,
+.status-card {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto 20px;
+  padding: 24px;
+  border-radius: 24px;
+  background: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.plant {
+  font-size: 96px;
+  margin-bottom: 12px;
+}
+
+.plant-message {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.timer-card h2 {
+  margin: 0 0 20px;
+  font-size: 48px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 999px;
+  background: #98b582;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #7fa06a;
+}
+
+.status-card {
+  font-size: 16px;
+}
